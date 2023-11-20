@@ -208,8 +208,8 @@ async function executeSwap() {
     to: uniswapRouterAddress,
     value: BigNumber.from(route.methodParameters.value),
     from: walletAddress,
-    gasPrice: route.gasPriceWei,
-    gasLimit: BigNumber.from('1000000')
+    // gasPrice: route.gasPriceWei,
+    // gasLimit: BigNumber.from('1000000')
   };
 
   // send out swap transaction

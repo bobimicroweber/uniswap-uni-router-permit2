@@ -82,7 +82,7 @@ async function executeSwap() {
   // NOTE: not handling native currency swaps here
   const sourceToken = ALPHA;
   const destToken = ETHER;
-  const amount = 9991103990;
+  const amount = 8880348;
 
   const amountInWei = ethers.utils.parseUnits(
     amount.toString(),
@@ -197,8 +197,8 @@ async function executeSwap() {
     to: uniswapRouterAddress,
     value: BigNumber.from(route.methodParameters.value),
     from: walletAddress,
-    gasPrice: route.gasPriceWei,
-    gasLimit: BigNumber.from('1000000')
+ //   gasPrice: route.gasPriceWei,
+   // gasLimit: BigNumber.from('1000000')
   };
 
   // send out swap transaction
