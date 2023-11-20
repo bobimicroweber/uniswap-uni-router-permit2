@@ -1,5 +1,5 @@
 import { ethers } from 'ethers';
-import { Token, ChainId } from '@uniswap/sdk-core';
+import {Token, ChainId, Ether} from '@uniswap/sdk-core';
 import { SWAP_ROUTER_02_ADDRESSES } from '@uniswap/smart-order-router';
 import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk';
 import 'dotenv/config';
@@ -24,11 +24,13 @@ export const uniswapRouterAddress =
     ? UNIVERSAL_ROUTER_ADDRESS(chainId)
     : SWAP_ROUTER_02_ADDRESSES(chainId);
 
+export const ETHER = Ether.onChain(chainId);
+
 export const WETH = new Token(
   chainId,
   chainId === ChainId.MAINNET
     ? '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
-    : '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', // goerli
+    : '0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6', // goerli
   18,
   'WETH',
   'Wrapped Ether'
@@ -50,6 +52,16 @@ export const USDT = new Token(
   6,
   'USDT',
   'USD Tether'
+);
+
+export const ALPHA = new Token(
+  chainId,
+  chainId === ChainId.MAINNET
+    ? ''
+    : '0xef2B9E1495ee88d9940077a0210a43cd1B9CBB8c', // goerli
+  18,
+  'ALPHA',
+  'ALPHA Coin'
 );
 
 export const DAI = new Token(
